@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="dao" />
         <module name="model" />
-        <module name="ProductViewer" />
         <module name="service" />
         <module name="web" />
       </profile>
