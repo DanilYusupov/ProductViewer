@@ -17,7 +17,9 @@ public class ProductService {
         this.dao = new ProductDao(getDataSource(), getTableName());
     }
 
-
+    public ProductDao getDao(){
+        return dao;
+    }
 
     private DataSource getDataSource(){
         HikariConfig config = new HikariConfig("/hikari.properties");

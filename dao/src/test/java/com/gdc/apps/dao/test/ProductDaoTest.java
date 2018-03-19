@@ -91,9 +91,10 @@ public class ProductDaoTest {
     }
 
     @Test
-    public void testGetTenOffset(){
+    public void testGetTenOffsetCount(){
         ProductDao dao  = new ProductDao(db.getTestDatabase(), tableName);
-        for (int i = 0; i < 30; i++) {
+        int count = 30;
+        for (int i = 0; i < count; i++) {
             product.setName(name + " : " + String.valueOf(i + 1));
             dao.save(product);
         }
@@ -102,9 +103,8 @@ public class ProductDaoTest {
         assertEquals(result.get(0).getName(), name + " : " + String.valueOf(offset + 1));
         assertEquals(result.get(4).getName(), name + " : " + String.valueOf(offset + 5));
         assertEquals(result.get(9).getName(), name + " : " + String.valueOf(offset + 10));
-//        for (Product product1 : result) {
-//            System.out.println(product1.getName());
-//        }
+
+        assertEquals(count, dao.getFullCount());
     }
 
     private void setTableName() {

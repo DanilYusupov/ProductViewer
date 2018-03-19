@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page pageEncoding="UTF-8" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,16 +70,16 @@
                 <li class="page-item disabled">
                     <span class="page-link">Previous</span>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
                 <li class="page-item active">
-      <span class="page-link">
-        2
-        <span class="sr-only">(current)</span>
-      </span>
+                    <span class="page-link">1<span class="sr-only">(current)</span></span>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <% int count = (int) request.getAttribute("count");
+                   int pages = (count % 10 > 0) ? (1 + count / 10) : (count / 10);
+                    for (int i = 0; i < pages - 1; i++){ %>
+                <li class="page-item"><button id="page<%=i + 2%>" class="page-link" value=<%=i + 2%> ></button></li>
+                <% } %>
                 <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                    <button id="nextPage" class="page-link">#">Next</button>
                 </li>
             </ul>
         </nav>
@@ -87,5 +88,6 @@
 
 <script src="js/jquery-3.3.1.slim.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/myScript.js"></script>
 </body>
 </html>
