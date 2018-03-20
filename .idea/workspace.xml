@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b9e1dad-c669-46e8-a716-fe051ccabac5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetSortedByCategory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetSortedByName.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetSortedByRating.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/filter.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dao/src/main/java/com/gdc/apps/dao/ProductDao.java" afterPath="$PROJECT_DIR$/dao/src/main/java/com/gdc/apps/dao/ProductDao.java" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/gdc/apps/service/ProductService.java" afterPath="$PROJECT_DIR$/service/src/main/java/com/gdc/apps/service/ProductService.java" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/home.html" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -70,38 +62,28 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.54454786">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="GetSortedByName.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetSortedByName.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="693">
-                  <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="filter.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/filter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="166">
-                  <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="myScript.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/myScript.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filter.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/filter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="712">
+              <caret line="66" column="5" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -164,7 +146,6 @@
         <option value="$PROJECT_DIR$/dao/src/test/java/com/gdc/apps/dao/test/ProductDaoTest.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetTotalCount.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetSortedByPrice.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/bodyEnd.js" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/home.html" />
         <option value="$PROJECT_DIR$/dao/src/main/java/com/gdc/apps/dao/ProductDao.java" />
@@ -174,6 +155,7 @@
         <option value="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetSortedByName.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/filter.js" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" />
       </list>
     </option>
   </component>
@@ -230,41 +212,6 @@
             <path>
               <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,7 +233,7 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
@@ -294,8 +241,8 @@
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -531,10 +478,10 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testGetTenOffsetCount" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ProductDaoTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testGetTenOffset" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testCrateUser" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testGetTenOffset" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testGetTenOffset" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testCrateUser" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductDaoTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testGetTenOffsetCount" />
       </list>
     </recent_temporary>
   </component>
@@ -639,11 +586,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28369000" />
+    <option name="totallyTimeSpent" value="28740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -655,7 +601,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15658094" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39087948" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32790446" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3441911" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -832,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="1" column="60875" lean-forward="false" selection-start-line="1" selection-start-column="60871" selection-end-line="1" selection-end-column="60875" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,18 +1075,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-          <folding>
-            <marker date="1521563373721" expanded="true" signature="606:628" ph="SELECT COUNT... missingValue" />
-            <marker date="1521563373721" expanded="true" signature="1123:1137" ph="SELECT * FRO... missingValue" />
-            <marker date="1521563373721" expanded="true" signature="1123:1153" ph="SELECT * FRO... missingValue" />
-            <marker date="1521563373721" expanded="true" signature="1123:1155" ph="SELECT * FRO... missingValue" />
-            <marker date="1521563373721" expanded="true" signature="1123:1173" ph="SELECT * FRO... missingValuesortStatement" />
-            <marker date="1521563373721" expanded="true" signature="1597:1697" ph="INSERT INTOm... " />
-            <marker date="1521563373721" expanded="true" signature="2394:2501" ph="UPDATE missingValue... " />
-            <marker date="1521563373721" expanded="true" signature="3240:3284" ph="SELECT * FRO... missingValue" />
-            <marker date="1521563373721" expanded="true" signature="4120:4169" ph="SELECT * FRO... missingValue" />
-            <marker date="1521563373721" expanded="true" signature="4696:4736" ph="DELETE FROM missingValue... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1154,17 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="29" column="41" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="29" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/myScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,9 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,17 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,9 +1112,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="66" column="5" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/myScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

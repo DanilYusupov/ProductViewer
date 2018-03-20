@@ -14,13 +14,46 @@ function showTable(json, offset){
     });
 }
 
-//Creating table by page number "n"
+//Creating table by page number "n" & sorting available
 function getPage(n){
     var offset = (n - 1) * 10;
-    var url = "/get_table?offset=" + offset;
-    $.get(url, function (json) {
-       showTable(json, offset);
-    });
+        if ($('#checkNameDesc').is(':checked')){
+        $.get('/get_by_name?nameSort=-1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkNameAsc').is(':checked')){
+        $.get('/get_by_name?nameSort=1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkCategoryDesc').is(':checked')){
+        $.get('/get_by_category?categorySort=-1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkCategoryAsc').is(':checked')){
+        $.get('/get_by_category?categorySort=1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkRatingDesc').is(':checked')){
+        $.get('/get_by_rating?ratingSort=-1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkRatingAsc').is(':checked')){
+        $.get('/get_by_rating?ratingSort=1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkPriceDesc').is(':checked')){
+        $.get('/get_by_price?priceSort=-1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else if ($('#checkPriceAsc').is(':checked')){
+        $.get('/get_by_price?priceSort=1&offset=' + offset, function (json) {
+            showTable(json, 0);
+        });
+    } else {
+        $.get("/get_table?offset=" + offset, function (json) {
+            showTable(json, offset);
+        });
+    }
 }
 
 //Creating pagination bar
