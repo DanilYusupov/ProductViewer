@@ -12,6 +12,6 @@ public class Home extends HttpServlet implements Service {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         request.setAttribute("count", service.getDao().getFullCount());
-        request.getRequestDispatcher("/home.jsp").forward(request, response);
+        request.getRequestDispatcher("/home.html").forward(request, response);
     }
 }

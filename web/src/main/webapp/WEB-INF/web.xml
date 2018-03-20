@@ -11,5 +11,23 @@
         <servlet-name>Home</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>GetTable</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetTable</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetTable</servlet-name>
+        <url-pattern>/get_table</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetTotalCount</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetTotalCount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetTotalCount</servlet-name>
+        <url-pattern>/get_total</url-pattern>
+    </servlet-mapping>
 
 </web-app>
