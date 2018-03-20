@@ -21,22 +21,56 @@
 <!-- Filter -->
 
 <div class="container border">
-    <div class="row align-items-center mt-2 mb-2">
-        <div class="col-auto">
-            <h4 class="mx-4 m-1">Filter</h4>
+    <div class="row">
+        <div class="col-auto  mt-2 mb-2">
+            <h4 class="mx-4 m-1">Filter by:</h4>
         </div>
-        <div class="col">
+        <div class="col mt-2 mb-2">
             <div class="btn-toolbar mr-5" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
-                    <button id="nameFilter" type="button" class="btn btn-secondary">Name</button>
-                    <button id="categoryFilter" type="button" class="btn btn-secondary">Category</button>
-                    <button id="ratingFilter" type="button" class="btn btn-secondary">Rating</button>
-                    <button id="priceFilter" type="button" class="btn btn-secondary">Price</button>
+                    <button id="nameFilterDesc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by name asc">-</button>
+                    <div class="btn btn-dark disabled">Name</div>
+                    <button id="nameFilterAsc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by name desc">+</button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-auto">
-            <button id="filter" class="btn btn-primary ">View</button>
+        <div class="col mt-2 mb-2">
+            <div class="btn-toolbar mr-5" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button id="categoryFilterDesc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by category asc">-</button>
+                    <div class="btn btn-dark disabled">Category</div>
+                    <button id="categoryFilterAsc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by category desc">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-2 mb-2">
+            <div class="btn-toolbar mr-5" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button id="ratingFilterDesc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by rating asc">-</button>
+                    <div class="btn btn-dark disabled">Rating</div>
+                    <button id="ratingFilterAsc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by rating desc">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-2 mb-2">
+            <div class="btn-toolbar mr-5" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button id="priceFilterDesc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by price asc">-</button>
+                    <div class="btn btn-dark disabled">Price</div>
+                    <button id="priceFilterAsc" type="button" class="btn btn-dark btn-sm" data-toggle="tooltip"
+                            data-placement="bottom" title="Sort by price desc">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-2 mb-2">
+            <button id="clear" class="btn btn-success">Clear</button>
         </div>
     </div>
 </div>
@@ -45,8 +79,8 @@
 
 <div class="container p-1">
     <div class="row justify-content-end">
-        <div class="col-auto mt-1">
-            <button type="button" class="btn btn-primary">+ create</button>
+        <div class="col-auto mt-1 mr-5">
+            <button type="button" class="btn btn-primary btn-sm">+ create</button>
         </div>
     </div>
 </div>

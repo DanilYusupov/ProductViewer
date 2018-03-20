@@ -30,4 +30,13 @@
         <url-pattern>/get_total</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetSortedByPrice</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetSortedByPrice</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetSortedByPrice</servlet-name>
+        <url-pattern>/get_by_price</url-pattern>
+    </servlet-mapping>
+
 </web-app>
