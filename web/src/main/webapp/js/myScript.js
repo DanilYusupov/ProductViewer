@@ -44,8 +44,6 @@ $(document).ready(function () {
     });
 });
 
-//Filter buttons
-
 //Price filter
 $(document).on("click", "#priceFilterDesc", function () {
     $.get("/get_by_price?priceSort=-1&offset=0", function (json) {

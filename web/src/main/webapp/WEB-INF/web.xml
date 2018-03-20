@@ -39,4 +39,31 @@
         <url-pattern>/get_by_price</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetSortedByRating</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetSortedByRating</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetSortedByRating</servlet-name>
+        <url-pattern>/get_by_rating</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetSortedByCategory</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetSortedByCategory</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetSortedByCategory</servlet-name>
+        <url-pattern>/get_by_category</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetSortedByName</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetSortedByName</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetSortedByName</servlet-name>
+        <url-pattern>/get_by_name</url-pattern>
+    </servlet-mapping>
+
 </web-app>

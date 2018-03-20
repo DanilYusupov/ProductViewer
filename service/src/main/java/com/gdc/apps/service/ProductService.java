@@ -19,12 +19,40 @@ public class ProductService {
         this.dao = new ProductDao(getDataSource(), getTableName());
     }
 
-    public List<Product> getSortedByPriceAsc(int offset) {
-        return dao.getSortedPriceList("ORDER BY price ASC LIMIT 10 OFFSET " + offset);
+    public List<Product> getSortedByNameDesc(int offset){
+        return getPattern("name", "DESC", offset);
+    }
+
+    public List<Product> getSortedByNameAsc(int offset){
+        return getPattern("name", "ASC", offset);
+    }
+
+    public List<Product> getSortedByCategoryDesc(int offset){
+        return getPattern("category", "DESC", offset);
+    }
+
+    public List<Product> getSortedByCategoryAsc(int offset){
+        return getPattern("category", "ASC", offset);
+    }
+
+    public List<Product> getSortedByRatingDesc(int offset){
+        return getPattern("rating", "DESC", offset);
+    }
+
+    public List<Product> getSortedByRatingAsc(int offset){
+        return getPattern("rating", "ASC", offset);
     }
 
     public List<Product> getSortedByPriceDesc(int offset) {
-        return dao.getSortedPriceList("ORDER BY price DESC LIMIT 10 OFFSET " + offset);
+        return getPattern("price", "DESC", offset);
+    }
+
+    public List<Product> getSortedByPriceAsc(int offset) {
+        return getPattern("price", "ASC", offset);
+    }
+
+    private List<Product> getPattern(String field, String acsOrDesc, int offset){
+        return dao.getSortedList("ORDER BY " + field + " " + acsOrDesc + " LIMIT 10 OFFSET " + offset);
     }
 
     public ProductDao getDao() {

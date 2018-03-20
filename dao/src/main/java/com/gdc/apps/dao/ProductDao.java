@@ -31,7 +31,7 @@ public class ProductDao extends ProductGenericDao{
         return -1;
     }
 
-    public List<Product> getSortedPriceList(String sortStatement){
+    public List<Product> getSortedList(String sortStatement){
         List<Product> list = new ArrayList<>();
         try (Connection c = ds.getConnection()) {
             Statement st = c.createStatement();
