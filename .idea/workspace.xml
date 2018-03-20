@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b9e1dad-c669-46e8-a716-fe051ccabac5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetTotalCount.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dao/src/test/java/com/gdc/apps/dao/test/ProductDaoTest.java" afterPath="$PROJECT_DIR$/dao/src/test/java/com/gdc/apps/dao/test/ProductDaoTest.java" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/web/pom.xml" afterPath="$PROJECT_DIR$/web/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/Home.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/Home.java" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/home.jsp" afterPath="$PROJECT_DIR$/web/src/main/webapp/home.html" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/home.html" afterPath="$PROJECT_DIR$/web/src/main/webapp/home.html" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" afterPath="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -73,8 +67,8 @@
       <file leaf-file-name="myScript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/myScript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="432">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -132,6 +126,16 @@
                 <marker date="1521472105774" expanded="true" signature="3547:3596" ph="SELECT * FRO... missingValue" />
                 <marker date="1521472105774" expanded="true" signature="4123:4163" ph="DELETE FROM missingValue... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1533">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -199,9 +203,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/home.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/home.html" />
         <option value="$PROJECT_DIR$/dao/src/test/java/com/gdc/apps/dao/test/ProductDaoTest.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/gdc/apps/web/servlets/GetTotalCount.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/home.html" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/js/myScript.js" />
       </list>
     </option>
@@ -357,15 +361,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductViewer" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProductViewer" type="b2602c69:ProjectViewProjectNode" />
@@ -631,7 +626,7 @@
       <option name="presentableId" value="Default" />
       <updated>1521297652676</updated>
       <workItem from="1521459863388" duration="3731000" />
-      <workItem from="1521548849526" duration="4619000" />
+      <workItem from="1521548849526" duration="6037000" />
     </task>
     <task id="LOCAL-00001" summary="DAO realized">
       <created>1521316053033</created>
@@ -661,7 +656,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521474588739</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Stable version of home and pagination">
+      <created>1521553502221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1521553502221</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -697,7 +699,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18402000" />
+    <option name="totallyTimeSpent" value="19820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -805,7 +807,8 @@
     <MESSAGE value="Starting build" />
     <MESSAGE value="Implemented bootstrap pattern into web module" />
     <MESSAGE value="pagination &amp; table in process" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination &amp; table in process" />
+    <MESSAGE value="Stable version of home and pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stable version of home and pagination" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -822,6 +825,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,14 +1181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dao/src/test/java/com/gdc/apps/dao/test/ProductDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1213,10 +1209,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1533">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/js/myScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="3" lean-forward="false" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        <state relative-caret-position="432">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
