@@ -31,6 +31,20 @@ public class ProductDao extends ProductGenericDao{
         return -1;
     }
 
+    public List<Product> getSortedList(String sortStatement){
+        List<Product> list = new ArrayList<>();
+        try (Connection c = ds.getConnection()) {
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM " + tableName + " " + sortStatement);
+            while (rs.next()){
+                list.add(create(rs));
+            }
+            return list.isEmpty() ? null : list;
+        } catch (SQLException e) {
+            throw new DaoException("Error receiving products sorted by price: ", e);
+        }
+    }
+
     @Override
     Long insert(Product entity) {
         try (Connection c = ds.getConnection()) {

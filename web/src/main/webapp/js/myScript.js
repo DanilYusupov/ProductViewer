@@ -1,20 +1,25 @@
+//Show table
+function showTable(json, offset){
+    var table = document.getElementById('tableBody');
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+    $.each(json, function (index, item) {
+        var $tr = $('<tr>').appendTo(table);
+        $("<td>").text(offset + index + 1).appendTo($tr);
+        $("<td>").text(item['name']).appendTo($tr);
+        $("<td>").text(item['category']).appendTo($tr);
+        $("<td>").text(item['rating']).appendTo($tr);
+        $("<td>").text(item['price']).appendTo($tr);
+    });
+}
+
 //Creating table by page number "n"
 function getPage(n){
     var offset = (n - 1) * 10;
     var url = "/get_table?offset=" + offset;
     $.get(url, function (json) {
-        var table = document.getElementById('tableBody');
-        while (table.firstChild) {
-            table.removeChild(table.firstChild);
-        }
-        $.each(json, function (index, item) {
-            var $tr = $('<tr>').appendTo(table);
-            $("<td>").text(offset + index + 1).appendTo($tr);
-            $("<td>").text(item['name']).appendTo($tr);
-            $("<td>").text(item['category']).appendTo($tr);
-            $("<td>").text(item['rating']).appendTo($tr);
-            $("<td>").text(item['price']).appendTo($tr);
-        });
+       showTable(json, offset);
     });
 }
 
@@ -36,5 +41,18 @@ $(document).ready(function () {
             var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
             $("<button>").attr('class', 'page-link').attr('onclick', 'getPage(' + i + ')').text(i).appendTo($li);
         }
+    });
+});
+
+//Price filter
+$(document).on("click", "#priceFilterDesc", function () {
+    $.get("/get_by_price?priceSort=-1&offset=0", function (json) {
+        showTable(json, 0);
+    });
+});
+
+$(document).on("click", "#priceFilterAsc", function () {
+    $.get("/get_by_price?priceSort=1&offset=0", function (json) {
+        showTable(json, 0);
     });
 });

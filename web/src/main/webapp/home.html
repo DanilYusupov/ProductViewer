@@ -21,22 +21,69 @@
 <!-- Filter -->
 
 <div class="container border">
-    <div class="row align-items-center mt-2 mb-2">
-        <div class="col-auto">
-            <h4 class="mx-4 m-1">Filter</h4>
+    <div class="row">
+        <div class="col-auto  mt-2 mb-2">
+            <h4 class="mx-4 m-1">Filter by:</h4>
         </div>
-        <div class="col">
-            <div class="btn-toolbar mr-5" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-2" role="group" aria-label="First group">
-                    <button id="nameFilter" type="button" class="btn btn-secondary">Name</button>
-                    <button id="categoryFilter" type="button" class="btn btn-secondary">Category</button>
-                    <button id="ratingFilter" type="button" class="btn btn-secondary">Rating</button>
-                    <button id="priceFilter" type="button" class="btn btn-secondary">Price</button>
+        <div class="col mt-2 mb-2">
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkNameDesc">
+                    <label class="custom-control-label" for="checkNameDesc">name desc</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkNameAsc">
+                    <label class="custom-control-label" for="checkNameAsc">name asc</label>
                 </div>
             </div>
         </div>
-        <div class="col-sm-auto">
-            <button id="filter" class="btn btn-primary ">View</button>
+        <div class="col mt-2 mb-2">
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkCategoryDesc">
+                    <label class="custom-control-label" for="checkCategoryDesc">category desc</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkCategoryAsc">
+                    <label class="custom-control-label" for="checkCategoryAsc">category asc</label>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-2 mb-2">
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkRatingDesc">
+                    <label class="custom-control-label" for="checkRatingDesc">rating desc</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkRatingAsc">
+                    <label class="custom-control-label" for="checkRatingAsc">rating asc</label>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-2 mb-2">
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkPriceDesc">
+                    <label class="custom-control-label" for="checkPriceDesc">price desc</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="checkPriceAsc">
+                    <label class="custom-control-label" for="checkPriceAsc">price asc</label>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-2 mb-2">
+            <button id="view" class="btn btn-success">View</button>
+            <button id="clear" class="btn btn-secondary">Clear</button>
         </div>
     </div>
 </div>
@@ -45,8 +92,8 @@
 
 <div class="container p-1">
     <div class="row justify-content-end">
-        <div class="col-auto mt-1">
-            <button type="button" class="btn btn-primary">+ create</button>
+        <div class="col-auto mt-1 mr-5">
+            <button type="button" class="btn btn-warning btn-sm">+ create</button>
         </div>
     </div>
 </div>
@@ -80,6 +127,6 @@
     </div>
 </div>
 
-
+<script src="js/filter.js"></script>
 </body>
 </html>
