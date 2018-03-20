@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title>Product Viewer</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen"/>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
 </head>
 <body>
+<script src="js/myScript.js"></script>
 
 <!-- Head -->
 
@@ -18,15 +21,22 @@
 <!-- Filter -->
 
 <div class="container border">
-    <div class="row">
-        <div class="btn-toolbar mb-3 m-2" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="row align-items-center mt-2 mb-2">
+        <div class="col-auto">
             <h4 class="mx-4 m-1">Filter</h4>
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-                <button id="nameFilter" type="button" class="btn btn-secondary">Name</button>
-                <button id="categoryFilter" type="button" class="btn btn-secondary">Category</button>
-                <button id="ratingFilter" type="button" class="btn btn-secondary">Rating</button>
-                <button id="priceFilter" type="button" class="btn btn-secondary">Price</button>
+        </div>
+        <div class="col">
+            <div class="btn-toolbar mr-5" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                    <button id="nameFilter" type="button" class="btn btn-secondary">Name</button>
+                    <button id="categoryFilter" type="button" class="btn btn-secondary">Category</button>
+                    <button id="ratingFilter" type="button" class="btn btn-secondary">Rating</button>
+                    <button id="priceFilter" type="button" class="btn btn-secondary">Price</button>
+                </div>
             </div>
+        </div>
+        <div class="col-sm-auto">
+            <button id="filter" class="btn btn-primary ">View</button>
         </div>
     </div>
 </div>
@@ -65,27 +75,11 @@
 <div class="container p-1">
     <div class="row justify-content-center">
         <nav aria-label="...">
-            <ul class="pagination">
-                <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active">
-      <span class="page-link">
-        2
-        <span class="sr-only">(current)</span>
-      </span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
+            <ul id="pagesBar" class="pagination"></ul>
         </nav>
     </div>
 </div>
 
-<script src="js/jquery-3.3.1.slim.min.js"></script>
-<script src="js/bootstrap.js"></script>
+
 </body>
 </html>

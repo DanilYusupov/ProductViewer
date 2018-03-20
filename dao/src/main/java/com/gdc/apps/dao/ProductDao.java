@@ -3,6 +3,7 @@ package com.gdc.apps.dao;
 import com.gdc.apps.model.Product;
 
 import javax.sql.DataSource;
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,19 @@ public class ProductDao extends ProductGenericDao{
     public ProductDao(DataSource ds, String tableName) {
         this.ds = ds;
         this.tableName = tableName;
+    }
+
+    public int getFullCount(){
+        try (Connection c = ds.getConnection()) {
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT COUNT(id) FROM " + tableName + ";");
+            if (rs.next()){
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Error receiving rows count: ", e);
+        }
+        return -1;
     }
 
     @Override
