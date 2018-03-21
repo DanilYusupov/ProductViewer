@@ -66,4 +66,13 @@
         <url-pattern>/get_by_name</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Create</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.Create</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Create</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
 </web-app>

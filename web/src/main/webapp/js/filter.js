@@ -27,6 +27,7 @@ $('#clear').click(function () {
     $('#checkNameDesc, #checkNameAsc, #checkCategoryDesc, #checkCategoryAsc, #checkRatingDesc, #checkRatingAsc, #checkPriceDesc, #checkPriceAsc').prop('checked', false);
 });
 
+//View button realization
 $(document).on("click", "#view", function () {
     if ($('#checkNameDesc').is(':checked')){
         $.get('/get_by_name?nameSort=-1&offset=0', function (json) {
