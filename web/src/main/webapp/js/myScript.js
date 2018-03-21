@@ -1,3 +1,10 @@
+//Initialization home
+$(document).ready(function () {
+    getPage(1);
+    pageBar();
+
+});
+
 //Show table
 function showTable(json, offset) {
     var table = document.getElementById('tableBody');
@@ -76,13 +83,6 @@ function pageBar() {
     });
 }
 
-//Initialization home
-$(document).ready(function () {
-    getPage(1);
-    pageBar();
-});
-
-
 //Create modal
 $(document).on("click", "#create", function () {
     $('#createModal').modal('show');
@@ -151,3 +151,14 @@ function deleteItem(id) {
         document.location.reload();
     });
 }
+
+//Searching
+
+$(document).on('click', '#search', function () {
+    var name = document.getElementById('searchName').value;
+    var url = '/search?name=' + name;
+    $.get(url, function (json) {
+        $('#searchName').val("");
+        showTable(json, 0);
+    });
+});
