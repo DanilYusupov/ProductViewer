@@ -128,7 +128,9 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="mx-4">Products</h1>
+        <div class="col">
+            <h1 class="mx-4">Products</h1>
+        </div>
     </div>
 </div>
 
@@ -202,10 +204,22 @@
     </div>
 </div>
 
-<!-- Create button -->
+<!-- Search bar -->
 
-<div class="container p-1">
+<div class="container p-1 mt-1 mb-1">
     <div class="row justify-content-end">
+        <div class="col mt-1 ml-0">
+            <div class="input-group input-group-sm ">
+                <div class="input-group-prepend">
+                    <img class="input-group-text" src="img/glyphicons-28-search.png">
+                </div>
+                <input id="searchName" placeholder="Search by name..." type="text" class="form-control"
+                       aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <div class="input-group-append">
+                    <button id="search" class="btn btn-outline-secondary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
         <div class="col-auto mt-1 mr-5">
             <button id="create" type="button" class="btn btn-warning btn-sm">+ create</button>
         </div>

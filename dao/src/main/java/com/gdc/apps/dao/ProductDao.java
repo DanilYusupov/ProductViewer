@@ -18,6 +18,21 @@ public class ProductDao extends ProductGenericDao{
         this.tableName = tableName;
     }
 
+    public List<Product> search(String name){
+        List<Product> list = new ArrayList<>(1);
+        try(Connection c = ds.getConnection()){
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM " + tableName + " WHERE name=?;");
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                list.add(create(rs));
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Error searching products: ", e);
+        }
+        return list;
+    }
+
     public int getFullCount(){
         try (Connection c = ds.getConnection()) {
             Statement st = c.createStatement();
