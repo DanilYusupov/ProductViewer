@@ -48,12 +48,11 @@ public class ProductDao extends ProductGenericDao{
     @Override
     Long insert(Product entity) {
         try (Connection c = ds.getConnection()) {
-            PreparedStatement ps = c.prepareStatement("INSERT INTO" + tableName +
-                    " (category, name, price, rating) VALUES (?, ?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = c.prepareStatement("INSERT INTO " + tableName +
+                    " (category, name, price) VALUES (?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, entity.getCategory());
             ps.setString(2, entity.getName());
             ps.setInt(3, entity.getPrice());
-            ps.setShort(4, entity.getRating());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()){

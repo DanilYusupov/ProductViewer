@@ -12,6 +12,7 @@ function showTable(json, offset){
         $("<td>").text(item['rating']).appendTo($tr);
         $("<td>").text(item['price']).appendTo($tr);
     });
+    pageBar();
 }
 
 //Creating table by page number "n"
@@ -24,35 +25,39 @@ function getPage(n){
 }
 
 //Creating pagination bar
-// function getPaginationBar(){
-//
-// }
-
-//Initialization home
-$(document).ready(function () {
-    getPage(1);
+function pageBar(){
     $.get("/get_total", function (json) {
         var count = json['count'] / 10;
-        if (json['count'] % 10 > 0){
-            count += 1;
-        }
         var $ul = document.getElementById('pagesBar');
+        while ($ul.firstChild){
+            $ul.removeChild($ul.firstChild);
+        }
         for (var i = 1; i < count + 1; i++){
             var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
             $("<button>").attr('class', 'page-link').attr('onclick', 'getPage(' + i + ')').text(i).appendTo($li);
         }
     });
+}
+
+//Initialization home
+$(document).ready(function () {
+    getPage(1);
+    pageBar();
 });
 
-//Price filter
-$(document).on("click", "#priceFilterDesc", function () {
-    $.get("/get_by_price?priceSort=-1&offset=0", function (json) {
-        showTable(json, 0);
-    });
+
+//Create modal
+$(document).on("click", "#create", function(){
+    $('#modal').modal('show');
 });
 
-$(document).on("click", "#priceFilterAsc", function () {
-    $.get("/get_by_price?priceSort=1&offset=0", function (json) {
-        showTable(json, 0);
+//Create item
+$(document).on("click", "#createItem", function(){
+    var name = document.getElementById('addName').value;
+    var category = document.getElementById('addCategory').value;
+    var price = document.getElementById('addPrice').value;
+    var url = "/create?name=" + name + "&category=" + category + "&price=" + price;
+    $.post(url, function(message){
+        alert(message);
     });
 });
