@@ -10,13 +10,13 @@
 <body>
 <script src="js/myScript.js"></script>
 
-<!-- Modal -->
+<!-- Creation modal -->
 
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Create item</h5>
+                <h5 class="modal-title" id="createLabel">Create item</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -53,7 +53,71 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button id="createItem" class="btn btn-warning btn-sm ml-auto mr-3">Add</button>
+                    <button id="createItem" class="btn btn-warning btn-sm ml-auto mr-1">Add</button>
+                    <button id="createClear" class="btn btn-secondary btn-sm mr-1">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Updating modal -->
+
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateLabel">Update item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3 mr-3 ml-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="label-new-name">Item's new name</span>
+                        </div>
+                        <input id="newName" type="text" class="form-control" aria-label="Small"
+                               aria-describedby="label-new-name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3 mr-3 ml-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="label-new-category">New category</span>
+                        </div>
+                        <input id="newCategory" type="text" class="form-control" aria-label="Small"
+                               aria-describedby="label-new-category">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3 mr-3 ml-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="label-new-rating">New rating</span>
+                        </div>
+                        <input id="newRating" type="text" class="form-control" aria-label="Small"
+                               aria-describedby="label-new-rating">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group input-group-sm mb-3 mr-3 ml-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="label-new-price">New price</span>
+                        </div>
+                        <input id="newPrice" type="text" class="form-control" aria-label="Small"
+                               aria-describedby="label-new-price">
+                        <div class="input-group-append">
+                            <span class="input-group-text">$</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="updateItem" class="btn btn-warning btn-sm ml-auto mr-1">Update</button>
+                    <button id="updateClear" class="btn btn-secondary btn-sm mr-1">Clear</button>
+                </div>
+                <div style="display: none">
+                    <input id="updateId" type="text">
                 </div>
             </div>
         </div>
@@ -159,6 +223,7 @@
             <th scope="col">Category</th>
             <th scope="col">Rating</th>
             <th scope="col">Price</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody id="tableBody">
