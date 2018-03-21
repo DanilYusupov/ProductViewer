@@ -19,27 +19,48 @@ public class ProductService {
         this.dao = new ProductDao(getDataSource(), getTableName());
     }
 
-    public List<Product> getSortedByNameDesc(int offset){
+    public String updateItem(Long id, String name, String category, short rating, int price) {
+        Product old = dao.get(id);
+        if (!name.equals("")) {
+            old.setName(name);
+        }
+        if (!category.equals("")) {
+            old.setCategory(category);
+        }
+        if (rating != -1) {
+            if (rating != old.getRating()) {
+                old.setRating(rating);
+            }
+        }
+        if (price != -1) {
+            if (price != old.getPrice()) {
+                old.setPrice(price);
+            }
+        }
+        return (dao.save(old) != null) ? "Item with id: " + id + " updated." : "Error updating item with id: " + id + ".";
+    }
+
+    public List<Product> getSortedByNameDesc(int offset) {
         return getPattern("name", "DESC", offset);
     }
 
-    public List<Product> getSortedByNameAsc(int offset){
+    public List<Product> getSortedByNameAsc(int offset) {
         return getPattern("name", "ASC", offset);
     }
 
-    public List<Product> getSortedByCategoryDesc(int offset){
+    public List<Product> getSortedByCategoryDesc(int offset) {
         return getPattern("category", "DESC", offset);
     }
 
-    public List<Product> getSortedByCategoryAsc(int offset){
+    public List<Product> getSortedByCategoryAsc(int offset) {
         return getPattern("category", "ASC", offset);
     }
 
-    public List<Product> getSortedByRatingDesc(int offset){
+    public List<Product> getSortedByRatingDesc(int offset) {
         return getPattern("rating", "DESC", offset);
     }
 
-    public List<Product> getSortedByRatingAsc(int offset){
+    public List<Product> getSortedByRatingAsc(int offset) {
         return getPattern("rating", "ASC", offset);
     }
 
@@ -51,7 +72,7 @@ public class ProductService {
         return getPattern("price", "ASC", offset);
     }
 
-    private List<Product> getPattern(String field, String acsOrDesc, int offset){
+    private List<Product> getPattern(String field, String acsOrDesc, int offset) {
         return dao.getSortedList("ORDER BY " + field + " " + acsOrDesc + " LIMIT 10 OFFSET " + offset);
     }
 
