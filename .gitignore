@@ -1,7 +1,9 @@
 # Idea folders
 .idea/
 target/
-.idea/workspace.xml
+*.xml
+!web.xml
+!pom.xml
 
 # Compiled class file
 *.class
