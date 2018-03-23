@@ -18,11 +18,12 @@ public class ProductDao extends ProductGenericDao{
         this.tableName = tableName;
     }
 
-    public List<Product> search(String name){
+    public List<Product> search(String name, int offset){
         List<Product> list = new ArrayList<>(1);
         try(Connection c = ds.getConnection()){
-            PreparedStatement ps = c.prepareStatement("SELECT * FROM " + tableName + " WHERE name=?;");
-            ps.setString(1, name);
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM " + tableName + " WHERE name ILIKE ? LIMIT 10 OFFSET ?;");
+            ps.setString(1, "%" + name + "%");
+            ps.setInt(2, offset);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 list.add(create(rs));
@@ -31,6 +32,20 @@ public class ProductDao extends ProductGenericDao{
             throw new DaoException("Error searching products: ", e);
         }
         return list;
+    }
+
+    public int getSearchSize(String name){
+        try (Connection c = ds.getConnection()){
+            PreparedStatement ps = c.prepareStatement("SELECT COUNT(id) FROM " + tableName + " WHERE name ILIKE ?;");
+            ps.setString(1, "%" + name + "%");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Error receiving search size: ", e);
+        }
+        return -1;
     }
 
     public int getFullCount(){
