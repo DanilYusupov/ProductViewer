@@ -19,6 +19,11 @@ public class ProductService {
         this.dao = new ProductDao(getDataSource(), getTableName());
     }
 
+    public List<Product> getSortedList(int page, int size, String sortBy, String sortDir) {
+        int offset = (page - 1) * size;
+        return dao.getSortedList("ORDER BY " + sortBy + " " + sortDir.toUpperCase() + " LIMIT " + size + " OFFSET " + offset);
+    }
+
     public String updateItem(Long id, String name, String category, short rating, int price) {
         Product old = dao.get(id);
         if (!name.equals("")) {
@@ -40,42 +45,6 @@ public class ProductService {
         return (dao.save(old) != null) ? "Item with id: " + id + " updated." : "Error updating item with id: " + id + ".";
     }
 
-    public List<Product> getSortedByNameDesc(int offset) {
-        return getPattern("name", "DESC", offset);
-    }
-
-    public List<Product> getSortedByNameAsc(int offset) {
-        return getPattern("name", "ASC", offset);
-    }
-
-    public List<Product> getSortedByCategoryDesc(int offset) {
-        return getPattern("category", "DESC", offset);
-    }
-
-    public List<Product> getSortedByCategoryAsc(int offset) {
-        return getPattern("category", "ASC", offset);
-    }
-
-    public List<Product> getSortedByRatingDesc(int offset) {
-        return getPattern("rating", "DESC", offset);
-    }
-
-    public List<Product> getSortedByRatingAsc(int offset) {
-        return getPattern("rating", "ASC", offset);
-    }
-
-    public List<Product> getSortedByPriceDesc(int offset) {
-        return getPattern("price", "DESC", offset);
-    }
-
-    public List<Product> getSortedByPriceAsc(int offset) {
-        return getPattern("price", "ASC", offset);
-    }
-
-    private List<Product> getPattern(String field, String acsOrDesc, int offset) {
-        return dao.getSortedList("ORDER BY " + field + " " + acsOrDesc + " LIMIT 10 OFFSET " + offset);
-    }
-
     public ProductDao getDao() {
         return dao;
     }
@@ -95,5 +64,4 @@ public class ProductService {
                     "from file hikari.properties", e);
         }
     }
-
 }

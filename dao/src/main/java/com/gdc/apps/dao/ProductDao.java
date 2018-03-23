@@ -137,11 +137,12 @@ public class ProductDao extends ProductGenericDao{
     }
 
     @Override
-    public List<Product> getTenOffset(int offset) {
+    public List<Product> getLimitedOffset(int size, int offset) {
         List<Product> list = new ArrayList<>();
         try (Connection c = ds.getConnection()) {
-            PreparedStatement ps = c.prepareStatement("SELECT * FROM " + tableName + " LIMIT 10 OFFSET ?;");
-            ps.setInt(1, offset);
+            PreparedStatement ps = c.prepareStatement("SELECT * FROM " + tableName + " LIMIT ? OFFSET ?;");
+            ps.setInt(1, size);
+            ps.setInt(2, offset);
             ResultSet rs = ps.executeQuery();
             while (rs.next()){
                 list.add(create(rs));
