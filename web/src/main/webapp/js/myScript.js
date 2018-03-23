@@ -1,8 +1,6 @@
 //Initialization home
 $(document).ready(function () {
     getPage(1);
-    pageBar();
-
 });
 
 //Show table
@@ -22,7 +20,6 @@ function showTable(json, offset) {
         $("<button>").attr('class', 'btn btn-dark btn-sm').attr('onclick', 'updateItem(' + item['id'] + ')').text('update').appendTo(td);
         $("<button>").attr('class', 'btn btn-danger btn-sm').attr('onclick', 'deleteItem(' + item['id'] + ')').text('delete').appendTo(td);
     });
-    pageBar();
 }
 
 
@@ -32,38 +29,47 @@ function getPage(n) {
     if ($('#checkNameDesc').is(':checked')) {
         $.get('/get_by_name?nameSort=-1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkNameAsc').is(':checked')) {
         $.get('/get_by_name?nameSort=1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkCategoryDesc').is(':checked')) {
         $.get('/get_by_category?categorySort=-1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkCategoryAsc').is(':checked')) {
         $.get('/get_by_category?categorySort=1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkRatingDesc').is(':checked')) {
         $.get('/get_by_rating?ratingSort=-1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkRatingAsc').is(':checked')) {
         $.get('/get_by_rating?ratingSort=1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkPriceDesc').is(':checked')) {
         $.get('/get_by_price?priceSort=-1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else if ($('#checkPriceAsc').is(':checked')) {
         $.get('/get_by_price?priceSort=1&offset=' + offset, function (json) {
             showTable(json, 0);
+            pageBar();
         });
     } else {
         $.get("/get_table?offset=" + offset, function (json) {
             showTable(json, offset);
+            pageBar();
         });
     }
 }
@@ -81,6 +87,18 @@ function pageBar() {
             $("<button>").attr('class', 'page-link').attr('onclick', 'getPage(' + i + ')').text(i).appendTo($li);
         }
     });
+}
+
+function pageBarSearch(count) {
+    var size = conut / 10;
+    var $ul = document.getElementById('pagesBar');
+    while ($ul.firstChild) {
+        $ul.removeChild($ul.firstChild);
+    }
+    for (var i = 1; i < count + 1; i++) {
+        var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
+        $("<button>").attr('class', 'page-link').attr('onclick', 'getPage(' + i + ')').text(i).appendTo($li);
+    }
 }
 
 //Create modal
@@ -152,13 +170,34 @@ function deleteItem(id) {
     });
 }
 
-//Searching
-
+//Searching...
 $(document).on('click', '#search', function () {
     var name = document.getElementById('searchName').value;
-    var url = '/search?name=' + name;
+    var url = '/search?name=' + name + "&offset=0";
     $.get(url, function (json) {
         $('#searchName').val("");
         showTable(json, 0);
+        $.get("/get_search_count?name=" + name, function (json) {
+            searchPageBar(json['count'], name);
+        });
     });
 });
+
+function getSearchPage(n, name) {
+    var offset = (n - 1) * 10;
+    $.get('/search?name=' + name + "&offset=" + offset, function (json) {
+        showTable(json, offset);
+    });
+}
+
+function searchPageBar(n, name) {
+        var $ul = document.getElementById('pagesBar');
+        var count = n / 10;
+        while ($ul.firstChild) {
+            $ul.removeChild($ul.firstChild);
+        }
+        for (var i = 1; i < count + 1; i++) {
+            var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
+            $("<button>").attr('class', 'page-link').attr('onclick', 'getSearchPage(' + i + ', \'' + name + '\')').text(i).appendTo($li);
+        }
+}

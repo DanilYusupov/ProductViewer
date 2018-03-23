@@ -102,4 +102,12 @@
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SearchCount</servlet-name>
+        <servlet-class>com.gdc.apps.web.servlets.GetTotalSearchCount</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchCount</servlet-name>
+        <url-pattern>/get_search_count</url-pattern>
+    </servlet-mapping>
 </web-app>
