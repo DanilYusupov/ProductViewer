@@ -28,7 +28,6 @@ function getPage(page) {
     var offset = (page - 1) * size;
     $.get("/get_total", function (result) {
         var totalCount = result.count;
-        alert(totalCount);
         if ($('#checkNameDesc').is(':checked')) {
             $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=name&sortDir=DESC', function (json) {
                 showTable(json, offset);
