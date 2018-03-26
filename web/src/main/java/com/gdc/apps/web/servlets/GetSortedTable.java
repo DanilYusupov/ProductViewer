@@ -9,15 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class GetTable extends HttpServlet implements Service {
+public class GetSortedTable extends HttpServlet implements Service {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        int page = Integer.parseInt(request.getParameter("page"));
         int size = Integer.parseInt(request.getParameter("size"));
-        int offset = Integer.valueOf(request.getParameter("offset"));
-        List<Product> list = service.getDao().getLimitedOffset(size, offset);
+        String sortBy = request.getParameter("sortBy");
+        String sortDir = request.getParameter("sortDir");
+        List<Product> list = service.getSortedList(page, size, sortBy, sortDir);
         String json = new Gson().toJson(list);
         response.getWriter().write(json);
     }
+
 }

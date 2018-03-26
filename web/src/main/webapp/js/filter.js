@@ -29,50 +29,6 @@ $('#clear').click(function () {
 
 //View button realization
 $(document).on("click", "#view", function () {
-    if ($('#checkNameDesc').is(':checked')){
-        $.get('/get_by_name?nameSort=-1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkNameAsc').is(':checked')){
-        $.get('/get_by_name?nameSort=1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkCategoryDesc').is(':checked')){
-        $.get('/get_by_category?categorySort=-1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkCategoryAsc').is(':checked')){
-        $.get('/get_by_category?categorySort=1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkRatingDesc').is(':checked')){
-        $.get('/get_by_rating?ratingSort=-1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkRatingAsc').is(':checked')){
-        $.get('/get_by_rating?ratingSort=1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkPriceDesc').is(':checked')){
-        $.get('/get_by_price?priceSort=-1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkPriceAsc').is(':checked')){
-        $.get('/get_by_price?priceSort=1&offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else {
-        $.get('/get_table?offset=0', function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    }
+    var page = 1;
+    getPage(page);
 });

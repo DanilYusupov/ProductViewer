@@ -99,7 +99,8 @@ public class ProductDaoTest {
             dao.save(product);
         }
         int offset = 10;
-        List<Product> result = dao.getTenOffset(offset);
+        int size = 10;
+        List<Product> result = dao.getLimitedOffset(size, offset);
         assertEquals(result.get(0).getName(), name + " : " + String.valueOf(offset + 1));
         assertEquals(result.get(4).getName(), name + " : " + String.valueOf(offset + 5));
         assertEquals(result.get(9).getName(), name + " : " + String.valueOf(offset + 10));

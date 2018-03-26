@@ -22,71 +22,72 @@ function showTable(json, offset) {
     });
 }
 
-
-//Creating table by page number "n" & sorting available
-function getPage(n) {
-    var offset = (n - 1) * 10;
-    if ($('#checkNameDesc').is(':checked')) {
-        $.get('/get_by_name?nameSort=-1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkNameAsc').is(':checked')) {
-        $.get('/get_by_name?nameSort=1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkCategoryDesc').is(':checked')) {
-        $.get('/get_by_category?categorySort=-1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkCategoryAsc').is(':checked')) {
-        $.get('/get_by_category?categorySort=1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkRatingDesc').is(':checked')) {
-        $.get('/get_by_rating?ratingSort=-1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkRatingAsc').is(':checked')) {
-        $.get('/get_by_rating?ratingSort=1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkPriceDesc').is(':checked')) {
-        $.get('/get_by_price?priceSort=-1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else if ($('#checkPriceAsc').is(':checked')) {
-        $.get('/get_by_price?priceSort=1&offset=' + offset, function (json) {
-            showTable(json, 0);
-            pageBar();
-        });
-    } else {
-        $.get("/get_table?offset=" + offset, function (json) {
-            showTable(json, offset);
-            pageBar();
-        });
-    }
+//Creating table by page number "page" & items per page size
+function getPage(page) {
+    var size = 10;
+    var offset = (page - 1) * size;
+    $.get("/get_total", function (result) {
+        var totalCount = result.count;
+        if ($('#checkNameDesc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=name&sortDir=DESC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkNameAsc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=name&sortDir=ASC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkCategoryDesc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=category&sortDir=DESC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkCategoryAsc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=category&sortDir=ASC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkRatingDesc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=rating&sortDir=DESC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkRatingAsc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=rating&sortDir=ASC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkPriceDesc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=price&sortDir=DESC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else if ($('#checkPriceAsc').is(':checked')) {
+            $.get('/get_sorted?page=' + page + '&size=' + size + '&sortBy=price&sortDir=ASC', function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        } else {
+            $.get('/get_table?size=' + size + '&offset=' + offset, function (json) {
+                showTable(json, offset);
+                pageBar(totalCount, size);
+            });
+        }
+    });
 }
 
 //Creating pagination bar
-function pageBar() {
-    $.get("/get_total", function (json) {
-        var count = json['count'] / 10;
-        var $ul = document.getElementById('pagesBar');
-        while ($ul.firstChild) {
-            $ul.removeChild($ul.firstChild);
-        }
-        for (var i = 1; i < count + 1; i++) {
-            var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
-            $("<button>").attr('class', 'page-link').attr('onclick', 'getPage(' + i + ')').text(i).appendTo($li);
-        }
-    });
+function pageBar(n, size) {
+    var pages = n / size;
+    var $ul = document.getElementById('pagesBar');
+    while ($ul.firstChild) {
+        $ul.removeChild($ul.firstChild);
+    }
+    for (var i = 1; i < pages + 1; i++) {
+        var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
+        $("<button>").attr('class', 'page-link').attr('onclick', 'getPage(' + i + ')').text(i).appendTo($li);
+    }
 }
 
 function pageBarSearch(count) {
@@ -120,7 +121,7 @@ $(document).on("click", "#createItem", function () {
 
 //Clear create button
 $(document).on('click', '#createClear', function () {
-   clearCreate();
+    clearCreate();
 });
 
 function clearCreate() {
@@ -191,13 +192,13 @@ function getSearchPage(n, name) {
 }
 
 function searchPageBar(n, name) {
-        var $ul = document.getElementById('pagesBar');
-        var count = n / 10;
-        while ($ul.firstChild) {
-            $ul.removeChild($ul.firstChild);
-        }
-        for (var i = 1; i < count + 1; i++) {
-            var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
-            $("<button>").attr('class', 'page-link').attr('onclick', 'getSearchPage(' + i + ', \'' + name + '\')').text(i).appendTo($li);
-        }
+    var $ul = document.getElementById('pagesBar');
+    var count = n / 10;
+    while ($ul.firstChild) {
+        $ul.removeChild($ul.firstChild);
+    }
+    for (var i = 1; i < count + 1; i++) {
+        var $li = $("<li>").attr('class', 'page-item').appendTo($ul);
+        $("<button>").attr('class', 'page-link').attr('onclick', 'getSearchPage(' + i + ', \'' + name + '\')').text(i).appendTo($li);
+    }
 }
