@@ -15,7 +15,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <postgre.version>42.2.1.jre7</postgre.version>
-        <junit.version>4.9</junit.version>
+        <junit.version>4.13.1</junit.version>
         <flyway.version>5.0.7</flyway.version>
         <otj.vesrion>0.11.1</otj.vesrion>
         <slf4j.version>1.7.9</slf4j.version>
