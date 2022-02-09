@@ -19,7 +19,7 @@
         <flyway.version>5.0.7</flyway.version>
         <otj.vesrion>0.11.1</otj.vesrion>
         <slf4j.version>1.7.9</slf4j.version>
-        <hibernate.version>5.2.13.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <log4j.version>1.2.12</log4j.version>
 
         <javax.servlet.version>3.0-alpha-1</javax.servlet.version>
